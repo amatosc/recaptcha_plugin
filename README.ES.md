@@ -5,16 +5,16 @@ Guia rápida de uso
 --------------------------------------------------------------------------------
  - <http://www.google.com/recaptcha>
 
-2. Setting.
+2. Ajustes.
 --------------------------------------------------------------------------------
- - Download `recaptchalib.php` from:
+ - Descarga `recaptchalib.php` de:
   - <http://code.google.com/p/recaptcha/downloads/list?q=label:phplib-Latest>
- - And put it in `/app/Plugin/Recaptcha/Vendor/`
+ - Colocalo dentro de `/app/Plugin/Recaptcha/Vendor/`
 
 
-3. Config.
+3. Configuracion.
 --------------------------------------------------------------------------------
-Insert keys in /app/Plugin/Recaptcha/Config/key.php.
+Inserta la clave en /app/Plugin/Recaptcha/Config/key.php.
 ```php
 <?php
 	$config = array(
@@ -25,7 +25,7 @@ Insert keys in /app/Plugin/Recaptcha/Config/key.php.
 	);
 ```
 
-Loadding the Plugin in `/app/Config/bootstrap.php` insert
+Carga el Plugin en `/app/Config/bootstrap.php` inserta
 
 ```php
 <?php
@@ -33,7 +33,7 @@ CakePlugin::load('Recaptcha');
 ```
 
 
-4. Controller.
+4. Control.
 --------------------------------------------------------------------------------
 ```php
 <?php
@@ -41,20 +41,19 @@ CakePlugin::load('Recaptcha');
 	public $helpers = array('Recaptcha.Recaptcha');
 ```
 
-5. View.
+5. Vista.
 --------------------------------------------------------------------------------
-Inside `<form>` tags:
+Dentro de la etiqueta `<form>`:
 ```php
 <?php
 
 	echo $this->Recaptcha->show();
 	echo $this->Recaptcha->error();
 ```
-
-If you want to use reCAPTCHA theme, you should write like this:
+Si quieres usar algun theme de reCAPTCHA deberias escribir esto:
 ```php
 <?php echo $this->Recaptcha->show('white'); ?>
 ```
 
-**Possible values**: 'red' | 'white' | 'blackglass' | 'clean';
-**Default value**: 'red';
+**Posibles valores**: 'red' | 'white' | 'blackglass' | 'clean';
+**Valor por defecto**: 'red';
